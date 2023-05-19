@@ -12,34 +12,50 @@ export const Wrapper = styled.div`
 
 export const Label = styled.label`
   margin-bottom: 10px;
-  font-weight: 500;
-  font-size: 24px;
+  font-size: 22px;
+  color: #fff;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 `;
 
 export const InputForm = styled(Field)`
-  padding: 5px 10px;
+  padding: 15px;
   width: 100%;
+
   font-size: 24px;
-  color: powderblue;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+
   background-color: transparent;
-  border: none;
-  border-radius: 5px;
-  background-color: dimgray;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+
+  transition: all 300ms ease-in-out;
+
+  outline: none;
 `;
 
 export const AddBtn = styled.button`
-  padding: 10px 25px;
+  padding: 16px 32px;
+
+  font-weight: 700;
   font-size: 24px;
-  font-weight: 500;
-  color: cyan;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+
   background-color: transparent;
-  border-radius: 5px;
-  border: 1px solid powderblue;
-  cursor: pointer;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+
   transition: all 250ms ease-in-out;
-  &:hover,
-  &:focus {
-    color: white;
-    background-color: dimgray;
+
+  cursor: pointer;
+
+  :hover {
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.2);
   }
 `;

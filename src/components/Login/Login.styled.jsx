@@ -56,10 +56,6 @@ export const Input = styled(Field)`
     background-color: rgba(255, 255, 255, 0.1);
   }
 
-  &[type='password'] {
-    padding-right: 65px;
-  }
-
   &:hover,
   &:focus {
     color: #fff;

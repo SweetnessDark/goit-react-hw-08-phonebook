@@ -18,7 +18,7 @@ import {
 
 const initialValues = {
   email: 'test-user@gmail.com',
-  password: 'testuser',
+  password: 'Testuser_123',
 };
 
 const Login = () => {

@@ -6,6 +6,7 @@ export const ContainerBar = styled.div`
 
 export const Header = styled.header`
   padding: 20px;
+  margin-bottom: 15px;
   max-width: 850px;
 
   display: flex;

@@ -8,7 +8,20 @@ const initialState = {
   },
   token: null,
   isLoggedIn: false,
-  isUpdating: false,
+  isUpdating: true,
+
+  isLoading: false,
+  error: null,
+};
+
+const handlePending = state => {
+  state.isLoading = true;
+  state.error = null;
+};
+
+const handleRejected = (state, { payload }) => {
+  state.isLoading = false;
+  state.error = payload;
 };
 
 const authSlice = createSlice({
@@ -16,37 +29,37 @@ const authSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
-      .addCase(register.pending, (state, action) => state)
+      .addCase(register.pending, handlePending)
       .addCase(register.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
       })
-      .addCase(register.rejected, (state, action) => state)
-      .addCase(logIn.pending, (state, action) => state)
+      .addCase(register.rejected, handleRejected)
+      .addCase(logIn.pending, handlePending)
       .addCase(logIn.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
       })
-      .addCase(logIn.rejected, (state, action) => state)
-      .addCase(logOut.pending, (state, action) => state)
+      .addCase(logIn.rejected, handleRejected)
+      .addCase(logOut.pending, handlePending)
       .addCase(logOut.fulfilled, (state, action) => {
         state.user = { name: null, email: null };
         state.token = null;
         state.isLoggedIn = false;
       })
-      .addCase(logOut.rejected, (state, action) => state)
+      .addCase(logOut.rejected, handleRejected)
       .addCase(updateUsers.pending, (state, action) => {
-        state.isRefreshing = true;
+        state.isUpdating = true;
       })
       .addCase(updateUsers.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isLoggedIn = true;
-        state.isRefreshing = false;
+        state.isUpdating = false;
       })
       .addCase(updateUsers.rejected, (state, action) => {
-        state.isRefreshing = false;
+        state.isUpdating = false;
       });
   },
 });

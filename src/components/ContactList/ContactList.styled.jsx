@@ -21,14 +21,14 @@ export const ContactsItem = styled.li`
 export const Name = styled.span`
   text-align: left;
   font-size: 22px;
-  color: rgb(0, 132, 255);
+  color: #fff;
 `;
 
 export const Number = styled.span`
   text-align: right;
   font-weight: 500;
   font-size: 22px;
-  color: rgb(0, 132, 255);
+  color: #fff;
 `;
 
 export const DelBtn = styled.button`
@@ -36,10 +36,12 @@ export const DelBtn = styled.button`
   flex-basis: 15%;
   font-size: 18px;
   font-weight: 500;
-  color: cyan;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
   background-color: transparent;
-  border-radius: 5px;
-  border: 1px solid powderblue;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: all 250ms ease-in-out;
   &:hover {

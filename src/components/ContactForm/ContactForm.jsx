@@ -1,7 +1,6 @@
 import { ErrorMessage, Form, Formik } from 'formik';
 import { customAlphabet } from 'nanoid';
 import * as Yup from 'yup';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { AddBtn, InputForm, Label, Wrapper } from './ContactForm.styled';
 import { selectorContacts } from 'redux/selectors';
@@ -38,6 +37,7 @@ export const ContactForm = () => {
     }
 
     dispatch(addContact(newContact));
+    console.log('addContact :>> ', addContact);
     resetForm();
   };
 
@@ -67,5 +67,3 @@ export const ContactForm = () => {
     </>
   );
 };
-
-ContactForm.propTypes = { onSubmit: PropTypes.func.isRequired };

@@ -11,6 +11,7 @@ const HeaderBar = () => {
     <ContainerBar>
       <Header>
         {!isLoggedIn && <Navigation />}
+        {isLoggedIn && <Navigation />}
         {isLoggedIn ? <UserMenu /> : <AuthLink />}
       </Header>
     </ContainerBar>
